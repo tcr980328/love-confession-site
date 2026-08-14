@@ -31,9 +31,15 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
+      
+      - name: Upgrade vinext for static export
+        run: npm install --no-save vinext@1.0.0-beta.5
+      
       - name: Build website
         run: npm run build
+      
+      - name: Verify static homepage
+        run: test -f dist/client/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
