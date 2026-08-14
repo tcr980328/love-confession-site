@@ -36,7 +36,7 @@ jobs:
         run: npm install --no-save vinext@1.0.0-beta.5
       
       - name: Build website
-        run: npm run build
+        run: npx vinext build --prerender-all
       
       - name: Verify static homepage
         run: test -f dist/client/index.html
